@@ -9,7 +9,7 @@ Open the console inside the project folder and execute:
 
 ### Usage
 
-Access it at ``locahost:3000`` after running:
+Access it at ``localhost:3000`` after running:
 
 ```
   npm start
