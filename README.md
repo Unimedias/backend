@@ -12,5 +12,5 @@ Open the console inside the project folder and execute:
 Access it at ``localhost:3000`` after running:
 
 ```
-  npm start
+  npm start-mockapi
 ```
