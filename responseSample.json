@@ -1,0 +1,91 @@
+{
+  "student": {
+    "name": "Felipe Andrade",
+    "college": "Instituto Mauá de Tecnologia",
+    "course": "Engenharia de Computação",
+    "moment": "4º Ano",
+    "years": [
+      {
+        "label": 2018,
+        "cr": 7.2,
+        "overallAverage": 7.2,
+        "subjects": [
+          {
+            "name": "Banco de Dados",
+            "duration": "Anual",
+            "exams": [
+              {
+                "label": "P1",
+                "grade": 8.0,
+                "weight": 0.2,
+                "replace": []
+              },
+              {
+                "label": "P2",
+                "grade": 7.5,
+                "weight": 0.2,
+                "replace": []
+              },
+              {
+                "label": "PS1",
+                "grade": 7.5,
+                "weight": 0.2,
+                "replace": ["P1", "P2"]
+              },
+              {
+                "label": "P3",
+                "grade": 7.0,
+                "weight": 0.3,
+                "replace": []
+              },
+              {
+                "label": "P4",
+                "grade": 9.5,
+                "weight": 0.3,
+                "replace": []
+              },
+              {
+                "label": "PS2",
+                "grade": 7.5,
+                "weight": 0.3,
+                "replace": ["P3", "P4"]
+              }
+            ],
+            "assignments": [
+              {
+                "label": "T1",
+                "grade": 9.0,
+                "weight": 0.25,
+                "replace": []
+              },
+              {
+                "label": "T2",
+                "grade": 8.0,
+                "weight": 0.25,
+                "replace": []
+              },
+              {
+                "label": "T3",
+                "grade": 10,
+                "weight": 0.25,
+                "replace": []
+              },
+              {
+                "label": "T4",
+                "grade": 8.5,
+                "weight": 0.25,
+                "replace": []
+              },
+              {
+                "label": "T5",
+                "grade": 6.5,
+                "weight": 0.25,
+                "replace": ["T2"]
+              }
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

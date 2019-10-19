@@ -4,12 +4,15 @@
   "description": "Fake REST API for testing",
   "main": "index.js",
   "scripts": {
-    "start": "json-server --watch db.json"
+    "generate-mock-data": "node generateMockData",
+    "prestart-mockapi": "npm run generate-mock-data",
+    "start-mockapi": "json-server --watch db.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "json-server": "^0.15.0"
+    "json-schema-faker": "^0.5.0-rc22",
+    "json-server": "^0.15.1"
   }
 }
