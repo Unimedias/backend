@@ -22,34 +22,47 @@ const sortByProp = (prop) => (a, b) => {
   return 0;
 }
 
-const { student } = jsf(mockDataSchema);
+const sortByPropLength = (prop) => (a, b) => {
+  if (a[prop].length > b[prop].length) {
+    return 1;
+  }
 
-const uniqStudentYears = uniqByObjProp(student.years, "label");
+  if (a[prop].length < b[prop].length) {
+    return -1;
+  }
 
-uniqStudentYears.sort(sortByProp("label"));
+  return 0;
+}
+
+const { student } = jsf.generate(mockDataSchema);
+
+const uniqStudentYears = uniqByObjProp(student.years, 'label');
+
+uniqStudentYears.sort(sortByProp('label'));
 student.years = uniqStudentYears;
 
 student.years.forEach(year => {
-  const uniqStudentYearSubjects = uniqByObjProp(year.subjects, "name");
+  const uniqStudentYearSubjects = uniqByObjProp(year.subjects, 'name');
 
-  uniqStudentYearSubjects.sort(sortByProp("name"));
+  uniqStudentYearSubjects.sort(sortByProp('name'));
   year.subjects = uniqStudentYearSubjects;
     
   year.subjects.forEach(subject => {
-    const uniqStudentYearSubjectExams = uniqByObjProp(subject.exams, "label");
-    const uniqStudentYearSubjectAssignments = uniqByObjProp(subject.assignments, "label");
+    const uniqStudentYearSubjectExams = uniqByObjProp(subject.exams, 'label');
+    const uniqStudentYearSubjectAssigns = uniqByObjProp(subject.assigns, 'label');
 
-    uniqStudentYearSubjectExams.sort(sortByProp("label"));
-    uniqStudentYearSubjectAssignments.sort(sortByProp("label"));
+    uniqStudentYearSubjectExams.sort(sortByProp('label'));
+    uniqStudentYearSubjectAssigns.sort(sortByProp('label'));
+    uniqStudentYearSubjectAssigns.sort(sortByPropLength('label'));
     subject.exams = uniqStudentYearSubjectExams;
-    subject.assignments = uniqStudentYearSubjectAssignments;
+    subject.assigns = uniqStudentYearSubjectAssigns;
   });
 });
 
-fs.writeFile("./db.json", JSON.stringify({ student }), (err) => {
+fs.writeFile('./db.json', JSON.stringify({ student }), (err) => {
   if (err) {
     return console.log(err);
   }
 
-  console.log("Mock data generated.");
+  console.log('Mock data generated.');
 });
